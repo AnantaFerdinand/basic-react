@@ -1,4 +1,7 @@
+// //Pertemuan 22 Web Programming:
 import React from 'react';
+import Counter from '../Counter';
+
 const Cards = ({name, institution, address, phoneNumber} )=> {
    
     return(
@@ -7,19 +10,20 @@ const Cards = ({name, institution, address, phoneNumber} )=> {
             <p>{institution}</p>
             <p>{address}</p>
             <p>{phoneNumber}</p>
+            <Counter title = "Counter Component"/>
         </div>
     );
 };
 
-// const Cards = (props)=> {
-   
-//     return(
-//         <div className="card-container">
-//             <p>{props.name}</p>
-//             <p>{props.institution}</p>
-//             <p>{props.address}</p>
-//             <p>{props.phoneNumber}</p>
-//         </div>
+// export const Cards = (props)=> {
+//    return(
+//     <div className="card-container">
+//         <p>{props.name}</p>
+//         <p>{props.institution}</p>
+//         <p>{props.address}</p>
+//         <p>{props.phoneNumber}</p>
+//         <Counter title="Counter Component"/>
+//     </div>
 //     );
-// };
+//  };
 export default Cards;

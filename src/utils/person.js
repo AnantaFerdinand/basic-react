@@ -1,3 +1,4 @@
+//Pertemuan 22 Web Programming:
 export const person = [
   {
   name: "Ananta Ferdinand Lolo",

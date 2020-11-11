@@ -3,15 +3,16 @@ import './App.css';
 // import Header from './components/Header';
 // import Hello from './components/Hello';
 // import Content from './components/Content';
-import Cards from './components/Cards';
-import { person } from './utils/person';
+// import Cards from './components/Cards';
+import Counter from './components/Counter';
+// import { person } from './utils/person';
 
 
 
 function App() {
 return(
   <>
-  {person.map ((item) => {
+  {/* {person.map ((item) => {
     return(
         <Cards
         name={item.name}
@@ -20,7 +21,9 @@ return(
         phoneNumber={item.phoneNumber}
         />
       );
-    })}
+    })} */}
+    <Counter title="Counter Component"/>
+    
   </>
  );
 };
