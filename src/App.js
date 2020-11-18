@@ -1,30 +1,44 @@
-// import logo from './logo.svg';
+//Pertemuan 24 Web Porgramming:
 import './App.css';
-// import Header from './components/Header';
-// import Hello from './components/Hello';
-// import Content from './components/Content';
-// import Cards from './components/Cards';
-import Counter from './components/Counter';
-// import { person } from './utils/person';
+import React, {Component, useEffect} from 'react';
+import Cards from './components/Cards';
+import axios from "axios";
 
-
-
-function App() {
-return(
-  <>
-  {/* {person.map ((item) => {
-    return(
-        <Cards
-        name={item.name}
-        institution={item.institution}
-        address={item.address}
-        phoneNumber={item.phoneNumber}
-        />
-      );
-    })} */}
-    <Counter title="Counter Component"/>
-    
-  </>
- );
+class App extends Component{
+state = {
+  users: [],
 };
+  componentDidMount() {
+  // fetch("https://jsonplaceholder.typicode.com/users")
+  // .then(response => response.json())
+  // .then((json) => this.setState({users: json}));
+
+  axios
+    .get("https://jsonplaceholder.typicode.com/users")
+    .then((response)=>this.setState({users: response.data}));
+  
+  }
+  
+render (){
+  // console.log(this.state.users);
+  return (
+    <>
+    {
+      this.state.users.map((item)=>{
+        return(
+          <Cards 
+          name={item.name}
+          username={item.username}
+          email={item.email}
+          phone={item.phone}
+          />
+        );
+      })}
+      <p>Class App Component</p>
+    </>
+  )
+ }
+}
+
+
 export default App;
